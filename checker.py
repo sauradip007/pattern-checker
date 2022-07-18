@@ -21,8 +21,20 @@ def any_special(s):
         if p[i] in s:
             return True
     return False
-password = input("Enter password : ")
 pwd = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+# To check special chars appended with alphabets
+def last_special(s,k):
+    for i in range(len(s)-k):
+        if s[i] >= "a" and s[i] <= "z":
+            continue
+        else:
+            return False
+    if s[len(s)-k] in pwd:
+        return True
+    else:
+        return False
+password = input("Enter password : ")
+
 if len(re.findall("[0-9]",password)) == len(password):
     print("Password contains only digits (d)")
 if len(re.findall("[a-z]|[A-Z]", password)) == len(password):
@@ -85,8 +97,12 @@ if re.search(r'(^[A-Z]+)(\d{9}$)',password):
     print(f"Pattern is of type (u-a)+||d{9}")
 if re.search(r'(^[A-Z]+)(\d{10}$)',password):
     print(f"Pattern is of type (u-a)+||d{10}")
-
-
-    pass
+# To check alphabets appended with special chars
+if last_special(password,1):
+    print(f"The pattern is of type (l-a)+||s{1}")
+if last_special(password,2):
+    print(f"The pattern is of type (l-a)+||s{2}")
+if last_special(password,3):
+    print(f"The pattern is of type (l-a)+||s{3}")
 # elif re.search(r'(?=.*\d+)(?=.*[a-z])', password):
 #     print("The pattern is: (a+d+)")
