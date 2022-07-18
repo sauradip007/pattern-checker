@@ -65,6 +65,28 @@ if re.search(r'(^[a-z]+)(\d{9}$)', password):
     print(f"Pattern is of type (l-a)+||d{9} ")
 if re.search(r'(^[a-z]+)(\d{10}$)', password):
     print(f"Pattern is of type (l-a)+||d{10} ")
+if re.search(r'(^[A-Z]+)(?:\d$)',password):
+    print(f"Pattern is of type (u-a)+||d{1}")
+if re.search(r'(^[A-Z]+)(\d{2}$)',password):
+    print(f"Pattern is (u-a)+||d{2}")
+if re.search(r'(^[A-Z]+)(\d{3}$)',password):
+    print(f"Pattern is of type (u-a)+||d{3}")
+if re.search(r'(^[A-Z]+)(\d{4}$)',password):
+    print(f"Pattern is of type (u-a)+||d{4}")
+if re.search(r'(^[A-Z]+)(\d{5}$)',password):
+    print(f"Pattern is of type (u-a)+||d{5}")
+if re.search(r'(^[A-Z]+)(\d{6}$)',password):
+    print(f"Pattern is of type (u-a)+||d{6}")
+if re.search(r'(^[A-Z]+)(\d{7}$)',password):
+    print(f"Pattern is of type (u-a)+||d{7}")
+if re.search(r'(^[A-Z]+)(\d{8}$)',password):
+    print(f"Pattern is of type (u-a)+||d{8}")
+if re.search(r'(^[A-Z]+)(\d{9}$)',password):
+    print(f"Pattern is of type (u-a)+||d{9}")
+if re.search(r'(^[A-Z]+)(\d{10}$)',password):
+    print(f"Pattern is of type (u-a)+||d{10}")
+
+
     pass
 # elif re.search(r'(?=.*\d+)(?=.*[a-z])', password):
 #     print("The pattern is: (a+d+)")
